@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Docencia</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4a68d1;
+      color: white;
+      padding: 15px;
+    }
+    section {
+      margin: 40px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* --- Estilos del chatbot --- */
+    .chatbot-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px;
+      z-index: 9999;
+    }
+
+    .chatbot-frame {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 400px;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 15px;
+      z-index: 9999;
+    }
+
+    /* --- Imagen principal --- */
+    .perfil {
+      width: 250px;
+      border-radius: 50%;
+      margin-top: 20px;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Asesorías Docencia</h1>
+  </header>
+
+  <section>
+    <h2>Sobre mí</h2>
+    <p>Hola, soy el instructor Fernando Marmolejo Urriago. En este portal podrás escribir todas las inquietudes sobre temas acerca de las sesiones sincrónicas.</p>
+
+    <!-- 🔽 Imagen embebida -->
+    <img src="yo.jpg" alt="Foto del instructor" class="perfil">
+
+
+    <h2>Mi video favorito</h2>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/UFKJ_1lE79o"
+      title="Video"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+
+
+  </section>
+
+  <footer>
+    <p>© 2025</p>
+  </footer>
+
+  <!-- Chatbot embebido desde Colab -->
+  <button onclick="toggleChat()" class="chatbot-btn">💬</button>
+
+  <iframe id="chatbot"
+    class="chatbot-frame"
+    src="https://bb737e0478f3e5d6f5.gradio.live/"
+    frameborder="0">
+  </iframe>
+
+  <script>
+    function toggleChat() {
+      const frame = document.getElementById("chatbot");
+      frame.style.display = (frame.style.display === "none" || frame.style.display === "")
+        ? "block"
+        : "none";
+    }
+  </script>
+
+</body>
+</html>
